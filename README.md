@@ -43,3 +43,66 @@ It demonstrates how real backend systems are designed step-by-step using a phase
 ---
 
 ## 📁 Project Structure
+
+ tems-manager/
+│
+├── phase_1/
+├── phase_2/
+├── phase_3/
+├── assets/
+│ └── banner.png
+├── README.md
+
+
+---
+
+## ▶️ How to Run
+
+### Phase 1
+```bash
+cd phase_1
+python test_phase1.py
+
+### Phase 2
+
+cd phase_2
+python test_phase2.py
+
+
+### Phase 3
+
+cd phase_3
+python test_phase3.py
+
+
+---
+
+## 📸 Output Example
+
+![Output](assets/output.png)
+
+---
+
+## 🔗 GitHub Repo
+👉 https://github.com/YOUR_USERNAME/items-manager
+
+---
+
+## 🚀 Learning Outcome
+
+This project helped me understand:
+- How backend systems evolve from simple logic to scalable architecture  
+- How to design clean, maintainable, and extensible systems  
+- How real-world applications handle data and persistence  
+
+---
+
+## 📢 Connect With Me
+Feel free to connect and share feedback!
+
+---
+
+#Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode
+
+
+
