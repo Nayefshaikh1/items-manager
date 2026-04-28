@@ -1,108 +1,138 @@
 # 🚀 Items Manager (Python)
 
-![Project Banner](assets/banner.png)
-
 ## 📌 Overview
-This project is a simple **Items Manager** built using Python.  
-It demonstrates how real backend systems are designed step-by-step using a phased approach.
+
+This project is a simple **Items Manager** built using Python.
+It demonstrates how backend systems evolve from basic CRUD operations to a structured, scalable design with persistence.
 
 ---
 
 ## ⚙️ Features
 
-### ✅ Phase 1 (Basic CRUD)
-- Create item  
-- List all items  
-- Find item by ID  
-- Update item  
-- Delete item  
+### ✅ Phase 1 – Basic CRUD
 
-### 🔥 Phase 2 (Clean Architecture)
-- Separation of concerns  
-- Helper functions  
-- Validation  
-- Error handling  
+* Create item
+* List all items
+* Find item by ID
+* Update item
+* Delete item
 
-### 💾 Phase 3 (Persistence)
-- JSON file storage  
-- Data loading on startup  
-- Storage abstraction  
+### 🔥 Phase 2 – Clean Design
+
+* Separation of concerns
+* Helper functions
+* Validation
+* Error handling
+
+### 💾 Phase 3 – Persistence
+
+* JSON file storage
+* Load data on startup
+* Storage abstraction
 
 ---
 
 ## 🧠 Concepts Covered
 
-- Data Modeling  
-- CRUD Operations  
-- DRY Principle  
-- Separation of Concerns  
-- Validation & Error Handling  
-- Abstraction  
-- Persistence  
+* Data Modeling
+* CRUD Operations
+* DRY Principle
+* Separation of Concerns
+* Validation & Error Handling
+* Abstraction
+* Persistence
 
 ---
 
 ## 📁 Project Structure
 
- tems-manager/
+```
+items-manager/
 │
 ├── phase_1/
+│   ├── items_manager.py
+│   └── test_phase1.py
+│
 ├── phase_2/
+│   ├── item.py
+│   ├── manager.py
+│   └── test_phase2.py
+│
 ├── phase_3/
+│   ├── item.py
+│   ├── manager.py
+│   ├── storage_base.py
+│   ├── file_storage.py
+│   └── test_phase3.py
+│
 ├── assets/
-│ └── banner.png
-├── README.md
-
+│   ├── banner.png
+│   └── output.png
+│
+└── README.md
+```
 
 ---
 
 ## ▶️ How to Run
 
 ### Phase 1
-```bash
+
+```
 cd phase_1
 python test_phase1.py
+```
 
 ### Phase 2
 
+```
 cd phase_2
 python test_phase2.py
-
+```
 
 ### Phase 3
 
+```
 cd phase_3
 python test_phase3.py
-
+```
 
 ---
 
 ## 📸 Output Example
 
-![Output](assets/output.png)
+Add your output screenshot in:
 
----
+```
+assets/output.png
+```
 
-## 🔗 GitHub Repo
-👉 https://github.com/YOUR_USERNAME/items-manager
+Then it will display here automatically.
 
 ---
 
 ## 🚀 Learning Outcome
 
-This project helped me understand:
-- How backend systems evolve from simple logic to scalable architecture  
-- How to design clean, maintainable, and extensible systems  
-- How real-world applications handle data and persistence  
+Through this project, I learned:
+
+* How backend systems are built step-by-step
+* How to structure clean and maintainable code
+* How to separate logic, data, and storage
+* How persistence works using JSON
+* How to design systems that can scale
 
 ---
 
-## 📢 Connect With Me
-Feel free to connect and share feedback!
+## 🔗 GitHub Repository
+
+👉 https://github.com/Nayefshaikh1/items-manager
+
+---
+
+## 📢 About Me
+
+I am learning backend development and sharing my progress through real projects.
 
 ---
 
 #Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode
-
-
-
