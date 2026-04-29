@@ -183,3 +183,10 @@ I am learning backend development and sharing my progress through real-world pro
 ---
 
 #Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode #OOP #SystemDesign
+
+
+I am learning backend development and sharing my progress through real-world projects.
+
+---
+
+#Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode #OOP #SystemDesign
