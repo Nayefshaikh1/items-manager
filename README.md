@@ -2,8 +2,14 @@
 
 ## 📌 Overview
 
-This project is a simple **Items Manager** built using Python.
-It demonstrates how backend systems evolve from basic CRUD operations to a structured, scalable design with persistence.
+This project is a step-by-step implementation of an **Items Manager** built using Python.
+
+It demonstrates how backend systems evolve from:
+
+* simple CRUD operations
+* to clean architecture
+* to persistence
+* to object-oriented design
 
 ---
 
@@ -17,6 +23,8 @@ It demonstrates how backend systems evolve from basic CRUD operations to a struc
 * Update item
 * Delete item
 
+---
+
 ### 🔥 Phase 2 – Clean Design
 
 * Separation of concerns
@@ -24,11 +32,23 @@ It demonstrates how backend systems evolve from basic CRUD operations to a struc
 * Validation
 * Error handling
 
+---
+
 ### 💾 Phase 3 – Persistence
 
 * JSON file storage
 * Load data on startup
 * Storage abstraction
+
+---
+
+### 🧠 Phase 4 – Object-Oriented Architecture
+
+* Item as a domain entity (data + behavior)
+* Service layer for business logic
+* Store layer for collection management
+* Dependency injection (composition)
+* Clean separation of responsibilities
 
 ---
 
@@ -41,6 +61,9 @@ It demonstrates how backend systems evolve from basic CRUD operations to a struc
 * Validation & Error Handling
 * Abstraction
 * Persistence
+* Object-Oriented Design
+* Dependency Injection
+* Clean Architecture
 
 ---
 
@@ -65,9 +88,13 @@ items-manager/
 │   ├── file_storage.py
 │   └── test_phase3.py
 │
-├── assets/
-│   ├── banner.png
-│   └── output.png
+├── phase_4/
+│   ├── item.py              # Entity
+│   ├── item_service.py      # Business logic
+│   ├── item_store.py        # Collection layer
+│   ├── storage.py           # Persistence
+│   └── tests/
+│       └── test_phase4.py
 │
 └── README.md
 ```
@@ -97,6 +124,19 @@ cd phase_3
 python test_phase3.py
 ```
 
+### Phase 4
+
+```
+cd phase_4
+python main.py
+```
+
+Run tests:
+
+```
+python -m unittest discover
+```
+
 ---
 
 ## 📸 Output Example
@@ -107,19 +147,26 @@ Add your output screenshot in:
 assets/output.png
 ```
 
-Then it will display here automatically.
-
 ---
 
-## 🚀 Learning Outcome
+## 🧠 Learning Outcome
 
 Through this project, I learned:
 
-* How backend systems are built step-by-step
-* How to structure clean and maintainable code
-* How to separate logic, data, and storage
+* How backend systems evolve from simple scripts to structured architecture
+* How to separate concerns across layers (Entity, Service, Storage)
+* How to design maintainable and scalable systems
 * How persistence works using JSON
-* How to design systems that can scale
+* How dependency injection improves flexibility and testability
+
+---
+
+## 🎯 Design Summary
+
+* **Item** → owns data and behavior
+* **Service** → controls operations
+* **Store** → manages collection
+* **Storage** → handles persistence
 
 ---
 
@@ -130,6 +177,13 @@ Through this project, I learned:
 ---
 
 ## 📢 About Me
+
+I am learning backend development and sharing my progress through real-world projects.
+
+---
+
+#Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode #OOP #SystemDesign
+
 
 I am learning backend development and sharing my progress through real projects.
 
