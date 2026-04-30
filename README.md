@@ -128,8 +128,6 @@ items-manager/
 
 ## ▶️ How to Run
 
-## ▶️ How to Run
-
 ### Phase 1
 
 ```
