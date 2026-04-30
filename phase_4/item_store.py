@@ -8,7 +8,7 @@ class ItemStore:
 
         self._load()
 
-    # ---------- LOAD ----------
+    #  LOAD 
     def _load(self):
         data = self.storage.load()
         self.items = [Item.from_dict(d) for d in data]
@@ -16,12 +16,12 @@ class ItemStore:
         if self.items:
             self.next_id = max(item.id for item in self.items) + 1
 
-    # ---------- SAVE ----------
+    #  SAVE 
     def _save(self):
         data = [item.to_dict() for item in self.items]
         self.storage.save(data)
 
-    # ---------- HELPER ----------
+    #  HELPER 
     def _find_index(self, item_id):
         for i, item in enumerate(self.items):
             if item.id == item_id:
