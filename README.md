@@ -10,6 +10,7 @@ It demonstrates how backend systems evolve from:
 * to clean architecture
 * to persistence
 * to object-oriented design
+* to **real-world scalable architecture**
 
 ---
 
@@ -52,6 +53,17 @@ It demonstrates how backend systems evolve from:
 
 ---
 
+### 🚀 Phase 5 – Scalable Architecture (Industry Level)
+
+* Repository pattern (data access abstraction)
+* Service layer decoupled from storage
+* Dependency inversion (interface-based design)
+* Replaceable storage (file → database ready)
+* Unit testing (service layer with fake repository)
+* Integration testing (repository with real storage)
+
+---
+
 ## 🧠 Concepts Covered
 
 * Data Modeling
@@ -64,12 +76,15 @@ It demonstrates how backend systems evolve from:
 * Object-Oriented Design
 * Dependency Injection
 * Clean Architecture
+* Repository Pattern
+* Dependency Inversion Principle (DIP)
+* Unit Testing & Integration Testing
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 items-manager/
 │
 ├── phase_1/
@@ -89,17 +104,29 @@ items-manager/
 │   └── test_phase3.py
 │
 ├── phase_4/
-│   ├── item.py              # Entity
-│   ├── item_service.py      # Business logic
-│   ├── item_store.py        # Collection layer
-│   ├── storage.py           # Persistence
+│   ├── item.py
+│   ├── item_service.py
+│   ├── item_store.py
+│   ├── storage.py
 │   └── tests/
 │       └── test_phase4.py
+│
+├── phase_5/
+│   ├── item.py
+│   ├── item_service.py
+│   ├── item_repository.py
+│   ├── file_repository.py
+│   ├── storage.py
+│   └── tests/
+│       ├── test_service.py
+│       └── test_repository.py
 │
 └── README.md
 ```
 
 ---
+
+## ▶️ How to Run
 
 ## ▶️ How to Run
 
@@ -131,42 +158,48 @@ cd phase_4
 python main.py
 ```
 
+### Phase 5
+
+```bash
+cd phase_5
+python main.py
+```
+
 Run tests:
 
-```
-python -m unittest discover
-```
-
----
-
-## 📸 Output Example
-
-Add your output screenshot in:
-
-```
-assets/output.png
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ---
 
-## 🧠 Learning Outcome
+## 🧪 Testing Strategy
 
-Through this project, I learned:
-
-* How backend systems evolve from simple scripts to structured architecture
-* How to separate concerns across layers (Entity, Service, Storage)
-* How to design maintainable and scalable systems
-* How persistence works using JSON
-* How dependency injection improves flexibility and testability
+* **Unit Tests** → Service layer (using fake repository)
+* **Integration Tests** → Repository layer (real file storage)
+* **Coverage Ready** → Can measure using `coverage`
 
 ---
 
 ## 🎯 Design Summary
 
 * **Item** → owns data and behavior
-* **Service** → controls operations
-* **Store** → manages collection
+* **Service** → controls business logic
+* **Repository** → abstracts data access
 * **Storage** → handles persistence
+* **Main** → wires dependencies (composition root)
+
+---
+
+## 🚀 Learning Outcome
+
+Through this project, I learned:
+
+* How to evolve a system from simple scripts to scalable architecture
+* How to separate business logic from data access
+* How to design flexible systems using dependency injection
+* How to apply repository pattern in real applications
+* How to test systems using unit and integration testing
 
 ---
 
@@ -182,7 +215,8 @@ I am learning backend development and sharing my progress through real-world pro
 
 ---
 
-#Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode #OOP #SystemDesign
+#Python #BackendDevelopment #LearningInPublic #SoftwareEngineering #CleanCode #OOP #SystemDesign #Testing #Architecture
+
 
 
 I am learning backend development and sharing my progress through real-world projects.
