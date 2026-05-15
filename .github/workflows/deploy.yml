@@ -1,0 +1,68 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # ==========================================
+  # 1. BUILD & TEST (The "Test" Environment)
+  # ==========================================
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+        
+    - name: Install Dependencies
+      working-directory: ./phase_15
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Unit Tests
+      working-directory: ./phase_15
+      env:
+        # Mock environment variables for testing
+        APP_ENV: development
+        SECRET_KEY: test_key_123
+        DB_PATH: test_database.db
+      run: |
+        python -m pytest tests/ -v
+
+  # ==========================================
+  # 2. PACKAGE & PUSH (Docker)
+  # ==========================================
+  package:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker Image
+      working-directory: ./phase_15
+      run: docker build -t items-manager:${{ github.sha }} .
+      
+    # In a real scenario, this would push to AWS ECR, Docker Hub, etc.
+    # - name: Push to Registry
+    #   run: docker push items-manager:${{ github.sha }}
+
+  # ==========================================
+  # 3. DEPLOY TO PRODUCTION
+  # ==========================================
+  deploy:
+    needs: package
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger Production Deployment
+      run: |
+        echo "Deploying items-manager:${{ github.sha }} to production compute cluster..."
+        # Example: aws ecs update-service --cluster prod --service items-manager --force-new-deployment
