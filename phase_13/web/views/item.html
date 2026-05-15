@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details | Phase 13</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">PHASE 13</div>
+        <a href="/views/dashboard.html">Dashboard</a>
+        <a href="/views/create.html">Create Item</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <h1 id="pageTitle">Item Details</h1>
+                <p>View and manage item workflow</p>
+            </div>
+            <button class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
+
+        <div id="loadingBox" class="loading-box">
+            <div class="spinner"></div>
+            Loading item...
+        </div>
+
+        <div id="errorBox" class="empty-state hidden">
+            <h2 id="errorTitle">Item Not Found</h2>
+            <p id="errorMsg">The requested item could not be loaded.</p>
+            <a href="/views/dashboard.html" class="btn btn-primary" style="display:inline-block; margin-top:20px;">Back to Dashboard</a>
+        </div>
+
+        <div id="contentBox" class="detail-container hidden">
+            <!-- Details Card -->
+            <div class="detail-card">
+                <div class="header">
+                    <h2 id="itemTitle">Loading...</h2>
+                    <span id="itemBadge" class="badge">...</span>
+                </div>
+                <div class="body" id="itemDetails">Loading...</div>
+                
+                <div class="actions">
+                    <button class="btn btn-primary" id="btnEdit" onclick="goEdit()">Edit</button>
+                    <button class="btn btn-danger" id="btnDelete" onclick="doDelete()">Delete</button>
+                </div>
+            </div>
+
+            <!-- Workflow Actions -->
+            <div class="detail-card">
+                <h3 style="margin-bottom: 12px;">Workflow Actions</h3>
+                <div class="actions" id="workflowActions">
+                    <!-- Buttons injected via JS -->
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="workflow-section">
+                <h2>Workflow History</h2>
+                <div id="historyList">
+                    <!-- History entries injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/pages/item_details.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Item | Phase 13</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">PHASE 13</div>
+        <a href="/views/dashboard.html">Dashboard</a>
+        <a href="/views/create.html" class="active">Create Item</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <h1>Create New Item</h1>
+                <p>Add a new item to the workflow</p>
+            </div>
+            <button class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="form-page">
+            <div class="form-card">
+                <label>Title <span style="color:red">*</span></label>
+                <input type="text" id="itemTitle" class="input" placeholder="Enter title">
+
+                <label>Details</label>
+                <textarea id="itemDetails" class="input" placeholder="Enter details"></textarea>
+
+                <button class="btn btn-primary btn-block" id="btnCreate" onclick="doCreate()">Create Item</button>
+                <div id="createMsg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/pages/create_item.js"></script>
+</body>
+</html>

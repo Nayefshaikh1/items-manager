@@ -1,0 +1,9 @@
+# Phase 14 Application Requirements
+
+# The core application uses only standard library packages 
+# (http.server, sqlite3, json, hmac, hashlib)
+
+# Testing dependencies
+pytest==8.3.3
+
+# (If external dependencies are added later, list them here)

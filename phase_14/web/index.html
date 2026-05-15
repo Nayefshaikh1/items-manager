@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="
+            width=device-width,
+            initial-scale=1.0
+        "
+    >
+
+    <title>
+        Phase 13 Dashboard
+    </title>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/app.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/workflow.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/states.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- APP LAYOUT -->
+<!-- ========================= -->
+
+<div class="app-layout">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <h2 class="logo">
+            PHASE 13
+        </h2>
+
+        <nav>
+
+            <a href="index.html">
+                Dashboard
+            </a>
+
+            <a href="views/create.html">
+                Create Item
+            </a>
+
+            <a href="views/login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================= -->
+
+    <main class="main-content">
+
+        <!-- ========================= -->
+        <!-- TOP BAR -->
+        <!-- ========================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Item Dashboard
+                </h1>
+
+                <p>
+                    Workflow Management System
+                </p>
+
+            </div>
+
+            <button
+                id="logoutBtn"
+                class="danger-btn"
+            >
+                Logout
+            </button>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- SUMMARY -->
+        <!-- ========================= -->
+
+        <section
+            id="summaryPanel"
+            class="summary-grid"
+        >
+
+            <div class="summary-card">
+
+                <h3>Total</h3>
+
+                <p id="totalCount">
+                    0
+                </p>
+
+            </div>
+
+            <div class="summary-card draft">
+
+                <h3>Draft</h3>
+
+                <p id="draftCount">
+                    0
+                </p>
+
+            </div>
+
+            <div class="summary-card active">
+
+                <h3>Active</h3>
+
+                <p id="activeCount">
+                    0
+                </p>
+
+            </div>
+
+            <div class="summary-card blocked">
+
+                <h3>Blocked</h3>
+
+                <p id="blockedCount">
+                    0
+                </p>
+
+            </div>
+
+            <div class="summary-card completed">
+
+                <h3>Completed</h3>
+
+                <p id="completedCount">
+                    0
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- FILTER BAR -->
+        <!-- ========================= -->
+
+        <section class="filter-bar">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="
+                    Search by title...
+                "
+            >
+
+            <select id="stateFilter">
+
+                <option value="">
+                    All States
+                </option>
+
+                <option value="draft">
+                    Draft
+                </option>
+
+                <option value="active">
+                    Active
+                </option>
+
+                <option value="blocked">
+                    Blocked
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+            </select>
+
+            <button
+                id="refreshBtn"
+            >
+                Refresh
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- STATUS AREA -->
+        <!-- ========================= -->
+
+        <section id="statusArea">
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- ITEMS -->
+        <!-- ========================= -->
+
+        <section>
+
+            <div
+                id="itemsContainer"
+                class="items-grid"
+            >
+
+                <!-- JS renders items -->
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- EMPTY STATE -->
+        <!-- ========================= -->
+
+        <section
+            id="emptyState"
+            class="empty-state hidden"
+        >
+
+            <h2>
+                No Items Found
+            </h2>
+
+            <p>
+                Create your first item
+                to get started.
+            </p>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- LOADING -->
+        <!-- ========================= -->
+
+        <section
+            id="loadingState"
+            class="loading-state hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading items...
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ========================= -->
+<!-- JS -->
+<!-- ========================= -->
+
+<script src="js/services/api.js"></script>
+
+<script src="js/services/auth.js"></script>
+
+<script src="js/services/state.js"></script>
+
+<script src="js/utils/helpers.js"></script>
+
+<script src="js/utils/formatter.js"></script>
+
+<script src="js/components/item_card.js"></script>
+
+<script src="js/components/loading.js"></script>
+
+<script src="js/components/error.js"></script>
+
+<script src="js/components/empty.js"></script>
+
+<script src="js/components/toast.js"></script>
+
+<script src="js/pages/dashboard.js"></script>
+
+</body>
+</html>

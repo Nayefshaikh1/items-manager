@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # ==========================================
+  # PUBLIC ZONE (Load Balancer / Proxy)
+  # ==========================================
+  proxy:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web
+    networks:
+      - public_net
+
+  # ==========================================
+  # PRIVATE ZONE (Compute instances)
+  # ==========================================
+  web:
+    build: .
+    environment:
+      - APP_ENV=production
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8000
+      - DB_PATH=/var/data/database.db
+      - SECRET_KEY=${SECRET_KEY:-fallback_secure_key_for_compose}
+      - LOG_LEVEL=INFO
+    volumes:
+      - app_data:/var/data
+    networks:
+      - public_net  # To talk to proxy
+      - private_net # To talk to DB (if we used Postgres)
+    # Automatically restart on failure (resilience)
+    restart: unless-stopped
+    deploy:
+      replicas: 2 # Scale to 2 identical instances
+
+volumes:
+  app_data:
+
+networks:
+  public_net:
+  private_net:
+    internal: true # Cannot be reached from host/internet directly

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Phase 13</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">PHASE 13</div>
+        <a href="/views/dashboard.html" class="active">Dashboard</a>
+        <a href="/views/create.html">Create Item</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <h1>Workflow Dashboard</h1>
+                <p>Manage your items and states</p>
+            </div>
+            <button class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-grid" id="summaryGrid">
+            <div class="summary-card">
+                <h3>Total Items</h3>
+                <div class="count" id="countTotal">-</div>
+            </div>
+            <div class="summary-card s-draft">
+                <h3>Draft</h3>
+                <div class="count" id="countDraft">-</div>
+            </div>
+            <div class="summary-card s-active">
+                <h3>Active</h3>
+                <div class="count" id="countActive">-</div>
+            </div>
+            <div class="summary-card s-blocked">
+                <h3>Blocked</h3>
+                <div class="count" id="countBlocked">-</div>
+            </div>
+            <div class="summary-card s-completed">
+                <h3>Completed</h3>
+                <div class="count" id="countCompleted">-</div>
+            </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <input type="text" id="searchInput" class="input" placeholder="Search by title or details...">
+            <select id="stateFilter" class="input">
+                <option value="">All States</option>
+                <option value="draft">Draft</option>
+                <option value="active">Active</option>
+                <option value="blocked">Blocked</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button class="btn btn-primary" onclick="loadItems(true)">Refresh</button>
+        </div>
+
+        <!-- Items Container -->
+        <div id="loadingBox" class="loading-box hidden">
+            <div class="spinner"></div>
+            Loading items...
+        </div>
+
+        <div id="itemsGrid" class="items-grid"></div>
+
+        <div id="emptyState" class="empty-state hidden">
+            <h2>No Items Found</h2>
+            <p>Create your first item or adjust your filters.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination" class="hidden">
+            <button class="btn btn-secondary btn-sm" id="btnPrev" onclick="prevPage()">Prev</button>
+            <span class="page-info" id="pageInfo">Page 1</span>
+            <button class="btn btn-primary btn-sm" id="btnNext" onclick="nextPage()">Next</button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/pages/dashboard.js"></script>
+</body>
+</html>

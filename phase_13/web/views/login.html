@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 13 Authentication</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="auth-page">
+    <div class="auth-card">
+        <h1>Phase 13</h1>
+        <div class="subtitle">Workflow Management System</div>
+
+        <div class="tabs">
+            <button id="tabLogin" class="active" onclick="switchTab('login')">Login</button>
+            <button id="tabRegister" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <label>Username</label>
+            <input type="text" id="loginUser" class="input" placeholder="Enter username">
+            
+            <label>Password</label>
+            <input type="password" id="loginPass" class="input" placeholder="Enter password">
+            
+            <button class="btn btn-primary btn-block" onclick="doLogin()" id="btnLogin">Login</button>
+            <div id="loginMsg"></div>
+        </div>
+
+        <!-- Register Form -->
+        <div id="registerForm" class="hidden">
+            <label>Username</label>
+            <input type="text" id="regUser" class="input" placeholder="Choose username">
+            
+            <label>Password</label>
+            <input type="password" id="regPass" class="input" placeholder="Choose password">
+
+            <label>Role</label>
+            <select id="regRole" class="input">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+            
+            <button class="btn btn-primary btn-block" onclick="doRegister()" id="btnRegister">Register</button>
+            <div id="regMsg"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/pages/login.js"></script>
+</body>
+</html>

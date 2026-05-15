@@ -1,0 +1,71 @@
+/* WORKFLOW BADGES */
+
+.badge {
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    color: white;
+}
+
+.badge.draft {
+
+    background: gray;
+}
+
+.badge.active {
+
+    background: #2563eb;
+}
+
+.badge.blocked {
+
+    background: #dc2626;
+}
+
+.badge.completed {
+
+    background: #16a34a;
+}
+
+/* WORKFLOW BUTTONS */
+
+.workflow-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.workflow-actions button {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+/* HISTORY */
+
+.history-section {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+.history-item {
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid #eee;
+}
